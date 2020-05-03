@@ -1,7 +1,14 @@
 const db = require( "../data/config" )
 
-const router = express.Router()
+
+function getRecipesByIngredient( ingredient ) {
+  return db( "ingredients" )
+    .join( "recipes", "recipes.ingredients", "ingredients.name" )
+    .where( "name", ingredient )
+    .select( "recipes.name" )
+}
 
 
-
-module.exports = router
+module.exports = {
+  getRecipesByIngredient
+}

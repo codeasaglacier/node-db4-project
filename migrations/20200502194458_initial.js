@@ -12,6 +12,12 @@ exports.up = async function(knex) {
     table.increments( "Id" )
     table.text( "Ingredient" ).notNull().unique()
   } )
+
+  // await knex.schema.createTable( "Recipes_Ingredients", ( table ) => {
+  //   table.integer( "Recipes_Id" ).references( "Id" ).inTable( "Recipes" )
+  //   table.integer( "Ingredients_Id" ).references( "Id" ).inTable( "Ingredients" )
+  //   table.primary( [ "Recipes_Id", "Ingredients_Id" ] )
+  // } )
 };
 
 exports.down = async function(knex) {
