@@ -1,7 +1,7 @@
 const express = require( "express" )
 const helmet = require( "helmet" )
-const recipesRouter = require( "./routers/recipes" )
-const ingredientsRouter = require( "./routers/ingredients" )
+const recipesRouter = require( "./routers/recipes_router" )
+const ingredientsRouter = require( "./routers/ingredients_router" )
 
 const server = express()
 const port = process.env.PORT || 4000
